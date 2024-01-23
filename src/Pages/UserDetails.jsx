@@ -172,14 +172,18 @@ const UserDetails = () => {
     };
 
     const [deleteUser, setDeleteUser] = useState(false);
+
     const handleDelete = () => {
-        setDeleteUser(false);
-        const toastLoadingId = toast.loading("Please wait...");
-        setTimeout(() => {
-            toast.dismiss(toastLoadingId);
-            toast.success("Success");
-        }, 3000);
-        setShowActions(false);
+        axios.delete(`https://boss2-k-back-end.vercel.app/api/userdata/${id}`)
+        .then(()=>{
+            setDeleteUser(false);
+            const toastLoadingId = toast.loading("Please wait...");
+            setTimeout(() => {
+                toast.dismiss(toastLoadingId);
+                toast.success("Success");
+            }, 3000);
+            setShowActions(false);
+        })
     };
     const goBack = () => {
         window.history.back()
@@ -233,7 +237,8 @@ const UserDetails = () => {
                                         <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() =>
-                                                setCreditDebit(!creditDebit)
+                                               { setCreditDebit(!creditDebit)
+                                                handleDelete()}
                                             }
                                         >
                                             Credit/Debit
