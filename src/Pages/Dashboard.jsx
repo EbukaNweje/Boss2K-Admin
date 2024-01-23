@@ -202,7 +202,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                             ))}
-                            <div className="w-full h-14 rounded shadow flex justify-between p-4 cursor-pointer">
+                            {/* <div className="w-full h-14 rounded shadow flex justify-between p-4 cursor-pointer">
                                 <div className="flex flex-col justify-center ">
                                     <p className="text-sm text-[rgb(14,65,82)] font-bold">
                                         Jairo Arcila
@@ -214,7 +214,7 @@ const Dashboard = () => {
                                 <div className=" flex items-center">
                                     <FaArrowRight />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
