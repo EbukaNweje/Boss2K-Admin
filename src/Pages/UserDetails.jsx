@@ -237,10 +237,8 @@ const UserDetails = () => {
                                         <div
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() =>
-                                               { setCreditDebit(!creditDebit)
-                                                handleDelete()}
-                                            }
-                                        >
+                                                setCreditDebit(!creditDebit)
+                                            }>
                                             Credit/Debit
                                         </div>
                                         <div
