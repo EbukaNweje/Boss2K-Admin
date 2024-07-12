@@ -431,19 +431,13 @@ const SideNav = () => {
                             <p className="">Platform</p>
                         </div>
                     </NavLink>
-                    <NavLink
-                        to={"/"}
-                        className={({isActive}) =>
-                            !isActive
-                                ? "transition-all hover:text-[0.90rem] hover:bg-gray-100 rounded  hover:text-[#0e4152] text-[#b00707]"
-                                : "transition-all bg-[#0e4152] hover:bg-[#0e4152] text-white"
-                        }
-                    >
-                        <div className="w-full h-12 text-sm cursor-pointer hover:text-[0.90rem] transition-all rounded-md flex items-center gap-4 font-bold px-2 ">
-                            {/* <FaInfoCircle className="w-5 h-5" /> */}
-                            <p className="">Logout</p>
-                        </div>
+
+                    <NavLink  to={"/adminlogin/login"}>
+                        <div className="w-full h-12 text-sm cursor-pointer hover:text-[0.90rem] transition-all rounded-md flex items-center gap-4 font-bold px-2 text-[#a00000] ">
+                        <p className="">LogOut</p>
+                       </div>
                     </NavLink>
+                   
                 </div>
             </div>
         </>

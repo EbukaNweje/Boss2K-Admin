@@ -1,17 +1,17 @@
 import {useEffect, useState} from "react";
 import {FaArrowLeft, FaCaretDown} from "react-icons/fa";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {Modal} from "antd";
 import {toast} from "react-hot-toast";
 import axios from "axios";
 import {useParams} from "react-router-dom";
-// import {useHistory} from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
 
     const [oneUserData, setOneUserData] = useState({});
     const {id} = useParams();
+
+    const Nav = useNavigate()
 
     const handleGetOneUserData = () => {
         const url = `https://boss2-k-back-end.vercel.app/api/userdata/${id}`;
@@ -25,6 +25,10 @@ const UserDetails = () => {
                 console.log(error);
             });
     };
+
+    // const handlDeleteOneUserData = () => {
+       
+    // };
 
     useEffect(() => {
         if (id) {
@@ -57,7 +61,7 @@ const UserDetails = () => {
     const [creditDebitValue, setCreditDebitValue] = useState("");
     const [creditDebitItem, setCreditDebitItem] = useState("");
     let reqData;
-    console.log(creditDebitValue);
+    console.log(creditDebitItem);
 
     if (creditDebitItem === "bonus") {
         reqData = {bonus: `${Number(creditDebitValue) + Number(oneUserData.bonus)}`};
@@ -174,18 +178,24 @@ const UserDetails = () => {
     };
 
     const [deleteUser, setDeleteUser] = useState(false);
-
     const handleDelete = () => {
-        axios.delete(`https://boss2-k-back-end.vercel.app/api/userdata/${id}`)
-        .then(()=>{
-            setDeleteUser(false);
-            const toastLoadingId = toast.loading("Please wait...");
-            setTimeout(() => {
-                toast.dismiss(toastLoadingId);
-                toast.success("Success");
-            }, 3000);
-            setShowActions(false);
-        })
+        setDeleteUser(false);
+        const toastLoadingId = toast.loading("Please wait...");
+        setShowActions(false);
+        const url = `https://boss2-k-back-end.vercel.app/api/userdata/${id}`;
+        axios
+            .delete(url)
+            .then((res) => {
+                console.log(res?.data);
+                setTimeout(() => {
+                    toast.dismiss(toastLoadingId);
+                    toast.success("Success");
+                }, 3000);
+                window.history.back()
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
     const goBack = () => {
         window.history.back()
@@ -240,7 +250,8 @@ const UserDetails = () => {
                                             className="w-full h-7 flex items-center pl-1 text-sm hover:bg-gray-300 cursor-pointer"
                                             onClick={() =>
                                                 setCreditDebit(!creditDebit)
-                                            }>
+                                            }
+                                        >
                                             Credit/Debit
                                         </div>
                                         <div
@@ -291,7 +302,7 @@ const UserDetails = () => {
                                         <div
                                             className="w-full h-max flex items-center pl-1 py-1 text-sm hover:bg-gray-300 cursor-pointer text-[#f25961]"
                                             onClick={() =>
-                                                setDeleteUser(!deleteUser)
+                                                {setDeleteUser(!deleteUser);}
                                             }
                                         >
                                             Delete {oneUserData.fullName}

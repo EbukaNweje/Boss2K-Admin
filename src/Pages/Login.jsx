@@ -13,7 +13,6 @@ const Login = () => {
         axios
             .get(url)
             .then((response) => {
-                // console.log(response);
                 localStorage.setItem(
                     "allUserData",
                     JSON.stringify(response?.data)
@@ -62,8 +61,6 @@ const Login = () => {
                         nav("/admin/dashboard");
                     }
                     setLoading(false);
-
-                    //   window.location.reload();
                 })
                 .catch((error) => {
                     console.log(error);
@@ -82,7 +79,7 @@ const Login = () => {
                         <img
                             src={logo}
                             alt=""
-                            className="w-20 h-10 object-contain"
+                            className="w-32 h-20 object-contain"
                         />
                     </div>
                     <div className="w-full h-max bg-white shadow rounded py-12 px-12 flex flex-col gap-5">
@@ -138,7 +135,7 @@ const Login = () => {
                         </div>
                         <div className="w-full text-center">
                             <p className="text-sm">
-                                © Copyright 2024 Coinstarpro Bitminers All Rights
+                                © Copyright 2024 Thebitpaynexus All Rights
                                 Reserved.
                             </p>
                         </div>

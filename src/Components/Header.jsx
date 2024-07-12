@@ -9,14 +9,14 @@ const Header = ({sideBar}) => {
                 <div className="w-[16%] h-full flex items-center justify-between px-6 phone:px-2">
                     <IoMdMenu className="cursor-pointer  text-white hidden phone:block w-8 h-10" onClick={sideBar}/>
 
-                    <p className="text-[1.20rem] text-white phone:hidden">
-                        Coinstarpro Bitminers
+                    <p className="text-[1.70rem] text-white phone:hidden">
+                        Thebitpaynexus 
                     </p>
 
                     <IoMdMenu className="cursor-pointer w-7 h-7 text-white phone:hidden" />
                 </div>
                 <div className="w-[84%] h-full flex justify-between  items-center px-8">
-                    <p className="text-[1.70rem] text-white w-[80%] phone:flex justify-center hidden">Coinstarpro Bitminers</p>
+                    <p className="text-[1.70rem] text-white w-[80%] phone:flex justify-center hidden">Thebitpaynexus</p>
 
                     <div className="flex items-center h-10 w-96 bg-[#0c3846] rounded text-white phone:hidden">
                         <FaSearch className="w-10 h-6 cursor-pointer" />

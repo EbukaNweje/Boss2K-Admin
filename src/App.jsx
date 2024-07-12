@@ -1,4 +1,4 @@
-import { RouterProvider, createHashRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Pages/Login";
 import AdminHome from "./Components/AdminHome";
 import Dashboard from "./Pages/Dashboard";
@@ -27,19 +27,19 @@ import UserDetails from "./Pages/UserDetails";
 import LoginActivity from "./Pages/LoginActivity";
 // import { ToastContainer } from "react-toastify";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
+    element: <>
+      <HomeRoute/>
+    </>,
+  },
+  {
+    path: "/adminlogin/login",
     element: <>
       <Login/>
     </>,
   },
-//   {
-//     path: "/adminlogin/login",
-//     element: <>
-//       <Login/>
-//     </>,
-//   },
   {
     path: "/admin/forget-password",
     element: <>
