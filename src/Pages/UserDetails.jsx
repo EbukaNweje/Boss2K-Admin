@@ -171,7 +171,7 @@ const UserDetails = () => {
         setTimeout(() => {
             toast.dismiss(toastLoadingId);
             toast.success("Success");
-            window.location.href = `https://coinstarprobitminers-account.vercel.app/#/${id}`;
+            window.location.href = `https://fininvestohub-account.vercel.app/#/${id}`;
         }, 3000);
         setShowActions(false);
 
