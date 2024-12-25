@@ -197,7 +197,7 @@ const ManageUsers = () => {
                                             />
                                         </div>
                                         <div className="w-32  h-full flex items-center  ">
-                                            <p>{item?.fullName}</p>
+                                            <p>{item?.firstName} {item.lastName}</p>
                                         </div>
                                         <div className="w-32 h-full flex items-center ">
                                             <p>{item?.userName}</p>
