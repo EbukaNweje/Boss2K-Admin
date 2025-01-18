@@ -20,7 +20,7 @@ const ManageUsers = () => {
     const [showIcon, setShowIcon] = useState(true);
 
     const getAllUserData = () => {
-        const url = "https://boss2-k-back-end.vercel.app/api/alluserdata";
+        const url = "https://coinstarpro-bitminers-new-backnd-three.vercel.app/api/alluserdata";
         axios
             .get(url)
             .then((response) => {
@@ -104,7 +104,7 @@ const ManageUsers = () => {
 
 
     const Verify = (id) => { 
-            const url = `https://boss2-k-back-end.vercel.app/api/UserVerify/${id}`;
+            const url = `https://coinstarpro-bitminers-new-backnd-three.vercel.app/api/UserVerify/${id}`;
             axios.patch(url)
                 .then((response) => {
                     console.log(response.data.data.email);

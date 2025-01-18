@@ -10,7 +10,7 @@ const ManageAdmin = () => {
   const [coin, setCoin] = useState();
 
   const AddWallet = () => {
-    const url = `https://coinstarpro-bitminers-new-backnd.vercel.app/api/createWalletAddress`;
+    const url = `https://coinstarpro-bitminers-new-backnd-three.vercel.app/api/createWalletAddress`;
     const toastLoadingId = toast.loading("Please wait...");
 
     const data = {walletName,walletAddress,coin}
