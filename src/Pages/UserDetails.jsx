@@ -216,27 +216,27 @@ const UserDetails = () => {
         setShowActions(false);
     };
 
-    const AddProfit = () => {
-        const url = `https://coinstarpro-bitminers-new-backnd-three.vercel.app/api/add-profit/${id}`;
-        const profitAmount = creditDebitValue
-        console.log("This is it",profitAmount)
-        const toastLoadingId = toast.loading("Please wait...");
-        axios
-            .post(url, {profitAmount})
-            .then((response) => {
-                toast.dismiss(toastLoadingId);
-                console.log("Profile",response);
-                toast.success("Profit Added successfully");
-                setTimeout(() => {
-                    handleGetOneUserData();
-                }, 1000);
-                setShowActions(false);
-            })
-            .catch((error) => {
-                console.log("Profile",error);
-            });
+    // const AddProfit = () => {
+    //     const url = `https://coinstarpro-bitminers-new-backnd-three.vercel.app/api/add-profit/${id}`;
+    //     const profitAmount = creditDebitValue
+    //     console.log("This is it",profitAmount)
+    //     const toastLoadingId = toast.loading("Please wait...");
+    //     axios
+    //         .post(url, {profitAmount})
+    //         .then((response) => {
+    //             toast.dismiss(toastLoadingId);
+    //             console.log("Profile",response);
+    //             toast.success("Profit Added successfully");
+    //             setTimeout(() => {
+    //                 handleGetOneUserData();
+    //             }, 1000);
+    //             setShowActions(false);
+    //         })
+    //         .catch((error) => {
+    //             console.log("Profile",error);
+    //         });
 
-    }
+    // }
 
     const [edit, setEdit] = useState(false);
     const handleEdit = () => {
@@ -298,11 +298,11 @@ const UserDetails = () => {
       };
 
       const TextClick = () => {
-        if(creditDebitItem === "profit"){
-            AddProfit()
-        }else{
+        // if(creditDebitItem === "profit"){
+        //     AddProfit()
+        // }else{
             handleCreditDebit()
-        }
+        // }
       }
     
 
